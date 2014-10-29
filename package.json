@@ -1,0 +1,22 @@
+{
+  "name": "meshblu-reaper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "reaper-skynet.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/octoblu/meshblu-reaper.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/octoblu/meshblu-reaper/issues"
+  },
+  "homepage": "https://github.com/octoblu/meshblu-reaper",
+  "dependencies": {
+    "skynet": "^1.2.0"
+  }
+}
