@@ -1,6 +1,6 @@
 var skynet = require('skynet');
 var exec = require('child_process').exec;
-var config = require('./config.json');
+var config = require('./meshblu.json');
 
 var Reaper = require('./reaper');
 
