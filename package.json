@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/octoblu/meshblu-reaper",
   "dependencies": {
+    "lodash": "^2.4.1",
+    "raspi-io": "^1.0.2",
     "skynet": "^1.2.0"
   }
 }
