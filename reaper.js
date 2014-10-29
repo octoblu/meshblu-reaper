@@ -25,7 +25,7 @@ var Reaper = function(){
   };
 
   self.say = function(text){
-    exec('./v2.sh "'+text+'"');
+    exec('./voice.sh "'+text+'"');
   };
 
   return self;
