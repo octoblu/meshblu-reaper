@@ -1,7 +1,7 @@
 var _     = require('lodash');
 var raspi = require('raspi-io');
 var exec  = require('child_process').exec;
-var eyesPin = 16, jawPin = 18;
+var eyesPin = 16, jawPin = 22;
 var Reaper = function(){
   var self = this;
 
