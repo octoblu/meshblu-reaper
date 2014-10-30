@@ -3,6 +3,7 @@ var raspi = require('raspi-io');
 var exec  = require('child_process').exec;
 var eyesPin = 16, jawPin = 22;
 var Reaper = function(){
+  var jawInterval = false; 
   var self = this;
 
   self.connect = function(callback){
@@ -25,21 +26,24 @@ var Reaper = function(){
   };
 
   self.say = function(text){
-    self.eyes(true);
-    var jawInterval = setInterval(function(){
-      if(self.board.pins[jawPin].value === self.board.HIGH) {
-        return self.jaws(false);
-      }
-      return self.jaws(true);
-    }, 300);
-    
-    exec('./voice.sh "'+text+'"', function(){
-      console.log('done talking');
-      clearInterval(jawInterval);
-      self.jaws(false);
-      self.eyes(false);
-    });
-
+    if(!jawInterval) {
+      self.eyes(true);
+     jawInterval = 
+       setInterval(function(){
+              if(self.board.pins[jawPin].value === self.board.HIGH) {
+                return self.jaws(false);
+              }
+              return self.jaws(true);
+            }, 300);
+            
+      exec('./voice.sh "'+text+'"', function(){
+        console.log('done talking');
+        clearInterval(jawInterval);
+        jawInterval = false;
+        self.jaws(false);
+        self.eyes(false);
+      });
+    }
   };
 
   return self;
