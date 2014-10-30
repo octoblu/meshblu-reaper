@@ -25,7 +25,21 @@ var Reaper = function(){
   };
 
   self.say = function(text){
-    exec('./voice.sh "'+text+'"');
+    self.eyes(true);
+    var jawInterval = setInterval(function(){
+      if(self.board.pins[jawPin].value === self.board.HIGH) {
+        return self.jaws(false);
+      }
+      return self.jaws(true);
+    }, 300);
+    
+    exec('./voice.sh "'+text+'"', function(){
+      console.log('done talking');
+      clearInterval(jawInterval);
+      self.jaws(false);
+      self.eyes(false);
+    });
+
   };
 
   return self;
