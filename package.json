@@ -1,6 +1,6 @@
 {
   "name": "meshblu-reaper",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "reaper-skynet.js",
   "scripts": {
@@ -19,6 +19,6 @@
   "dependencies": {
     "lodash": "^2.4.1",
     "raspi-io": "^1.0.2",
-    "skynet": "^1.2.0"
+    "meshblu": "^1.9.0"
   }
 }

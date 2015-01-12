@@ -1,4 +1,4 @@
-var skynet = require('skynet');
+var meshblu = require('meshblu');
 var exec = require('child_process').exec;
 var config = require('./meshblu.json');
 
@@ -7,7 +7,7 @@ var Reaper = require('./reaper');
 var r = new Reaper();
 
 
-var conn = skynet.createConnection({
+var conn = meshblu.createConnection({
   uuid: config.uuid,
   token: config.token
 });
